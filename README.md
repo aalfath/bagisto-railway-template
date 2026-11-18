@@ -27,7 +27,7 @@ Health check: `/up` (Laravel's health route, no login).
 | `BAGISTO_SAMPLE_DATA` | `false` | Set to `true` before the first deploy to load Bagisto's demo catalogue. |
 | `PORT` | `8080` | Port nginx listens on. |
 
-Optional, add them yourself when you need them: `APP_TIMEZONE` (default `UTC`), `APP_LOCALE`, `APP_CURRENCY`. Mail (SMTP) is set in the admin panel under **Configure → Emails**.
+Optional, add them yourself when you need them: `APP_TIMEZONE` (default `UTC`), `APP_LOCALE`, `APP_CURRENCY`. Mail (SMTP) is set in the admin panel under **Configuration → Email**.
 
 ## Updates
 
