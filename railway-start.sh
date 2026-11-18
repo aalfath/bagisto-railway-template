@@ -12,6 +12,15 @@ log() { echo "[railway-start] $(date '+%Y-%m-%d %H:%M:%S') $*"; }
 
 PORT="${PORT:-8080}"
 
+# --- APP_KEY ---------------------------------------------------------------
+# The image ships a fixed APP_KEY in .env. Never run with it: the template
+# generates one per deployment (32 characters, or base64:<44 characters>).
+key="${APP_KEY#base64:}"
+if [ -z "$APP_KEY" ] || { [ "$key" = "$APP_KEY" ] && [ "${#APP_KEY}" -ne 32 ]; } || { [ "$key" != "$APP_KEY" ] && [ "${#key}" -ne 44 ]; }; then
+    log "ERROR: set APP_KEY to 32 random characters (the Railway template generates it)."
+    exit 1
+fi
+
 # --- Storage volume -------------------------------------------------------
 if [ ! -d "$APP_DIR/storage/framework" ]; then
     log "Empty storage volume: seeding folders."
