@@ -42,4 +42,6 @@ docker build -t bagisto-railway .
 # BAGISTO_ADMIN_PASSWORD (12+ characters) set, and a volume on /var/www/bagisto/storage
 ```
 
+`icon.png` is the bag mark from Bagisto's official logo (`packages/Webkul/Admin/src/Resources/assets/images/logo.svg` at `v2.5.1`, MIT), cut to a square for the Railway card.
+
 Upstream: [bagisto/bagisto](https://github.com/bagisto/bagisto) (MIT), [Docker docs](https://devdocs.bagisto.com/getting-started/installation.html).
